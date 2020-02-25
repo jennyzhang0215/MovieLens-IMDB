@@ -31,7 +31,12 @@ GENRES_ML_100K =\
 GENRES_ML_1M = GENRES_ML_100K[1:]
 GENRES_ML_10M = GENRES_ML_100K + ['IMAX']
 
-NAME = "ml-10m"
+
+### TODO the dataset name of the can be ["ml-100k", "ml-1m", "ml-10m"]
+NAME = "ml-100k" ### choice ["ml-100k", "ml-1m", "ml-10m"]
+
+
+
 READ_DATASET_DIR = os.path.realpath(os.path.join(os.path.abspath(__file__), '..', "movielens", "raw", NAME))
 SAVE_DATASET_DIR =os.path.realpath(os.path.join(os.path.abspath(__file__), '..', "movielens", "statistics", NAME))
 if not os.path.isdir(SAVE_DATASET_DIR):
@@ -663,10 +668,10 @@ def match(ml_id2l_title_year_dic, ml_id21_genre_dic,
 if __name__ == '__main__':
     print("==================================================")
 
-    # titles2id_dic, titles2year_dic, id2info_dic, id2genre_dic,\
-    # id2l_director_dic, id2l_writer_dic, people_id2name_dic = read_imdb2dic()
-    titles2id_dic, titles2year_dic, id2info_dic, id2genre_dic, \
-    id2l_director_dic, id2l_writer_dic, people_id2name_dic = load_imdb_dics()
+    titles2id_dic, titles2year_dic, id2info_dic, id2genre_dic,\
+    id2l_director_dic, id2l_writer_dic, people_id2name_dic = read_imdb2dic()
+    # titles2id_dic, titles2year_dic, id2info_dic, id2genre_dic, \
+    # id2l_director_dic, id2l_writer_dic, people_id2name_dic = load_imdb_dics()
 
     ml_id2l_title_year_dic, ml_id21_genre_dic = process_movielens()
     ### START MATCHING
