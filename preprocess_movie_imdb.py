@@ -415,7 +415,7 @@ def read_imdb2dic():
     ###################################################################################
 
     people_id2name_dic = {}
-    with open(os.path.join(IMDB_DIR, "name_basics.tsv"), newline='', encoding='utf-8') as csvfile:
+    with open(os.path.join(IMDB_DIR, "name.basics.tsv"), newline='', encoding='utf-8') as csvfile:
         file_rows = csv.reader(csvfile, delimiter='\t')
         for row in file_rows:
             id = row[0]
