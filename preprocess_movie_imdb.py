@@ -273,12 +273,12 @@ def process_movielens():
 def _download_imdb(flag_overwrite=False):
     if os.path.isdir(IMDB_DIR) is False:
         os.mkdir(IMDB_DIR)
-    DOWNLOAD_INFO = [('title_basics.tsv.gz', 'https://datasets.imdbws.com/title.basics.tsv.gz'),
-                     ('title_akas.tsv.gz', 'https://datasets.imdbws.com/title.akas.tsv.gz'),
-                     ('title_crew.tsv.gz', 'https://datasets.imdbws.com/title.crew.tsv.gz'),
-                     ('name_basics.tsv.gz', 'https://datasets.imdbws.com/name.basics.tsv.gz')]
+    DOWNLOAD_INFO = [('title.basics.tsv.gz', 'https://datasets.imdbws.com/title.basics.tsv.gz'),
+                     ('title.akas.tsv.gz', 'https://datasets.imdbws.com/title.akas.tsv.gz'),
+                     ('title.crew.tsv.gz', 'https://datasets.imdbws.com/title.crew.tsv.gz'),
+                     ('name.basics.tsv.gz', 'https://datasets.imdbws.com/name.basics.tsv.gz')]
     for save_name, url in DOWNLOAD_INFO:
-        if os.path.isfile(os.path.join(IMDB_DIR, save_name[:-3])) or not flag_overwrite:
+        if os.path.isfile(os.path.join(IMDB_DIR, save_name[:-3])):
             print("Found {}, Skip".format(os.path.join(IMDB_DIR, save_name)))
         else:
             data_file = request.urlopen(url)
@@ -294,7 +294,7 @@ def read_imdb2dic():
     _id2year_dic = {}
     id2info_dic = {}
     id2genre_dic = {}
-    with open(os.path.join(IMDB_DIR, "title_basics.tsv"), newline='', encoding='utf-8') as csvfile:
+    with open(os.path.join(IMDB_DIR, "title.basics.tsv"), newline='', encoding='utf-8') as csvfile:
         IMDB_title_name = csv.reader(csvfile, delimiter='\t')
         for row in IMDB_title_name:
             str_id = row[0]
@@ -346,7 +346,7 @@ def read_imdb2dic():
             else:
                 continue
 
-    with open(os.path.join(IMDB_DIR, "title_akas.tsv"), newline='', encoding='utf-8') as csvfile2:
+    with open(os.path.join(IMDB_DIR, "title.akas.tsv"), newline='', encoding='utf-8') as csvfile2:
         IMDB_akas_name = csv.reader(csvfile2, delimiter="\t")
         for row in IMDB_akas_name:
             str_id = row[0]
@@ -387,7 +387,7 @@ def read_imdb2dic():
 
     id2l_director_dic = {}
     id2l_writer_dic = {}
-    with open(os.path.join(IMDB_DIR, "title_crew.tsv"), newline='', encoding='utf-8') as csvfile:
+    with open(os.path.join(IMDB_DIR, "title.crew.tsv"), newline='', encoding='utf-8') as csvfile:
         file_rows = csv.reader(csvfile, delimiter='\t')
         for row in file_rows:
             id = row[0]
