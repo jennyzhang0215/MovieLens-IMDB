@@ -19,7 +19,10 @@ python preprocess_movie_imdb.py
 
 You can obtain a network schema graph like this:
 
-![network_schema](https://github.com/jennyzhang0215/MovieLens-IMDB/blob/master/network_schema_movielens_5.pngg)
+![network_schema](https://github.com/jennyzhang0215/MovieLens-IMDB/blob/master/network_schema_movielens_5.png)
+
+Besides, `director` and `writer`, you can obtain other knowledge such as `editor`, `producer`, `actor`, `cinematographer`, `composer`, etc. People also have basic information such as birth year, death year, primary profession, known in movies. etc.
+
 
 ### ML-20M
 
