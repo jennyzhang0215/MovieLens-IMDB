@@ -19,7 +19,7 @@ python preprocess_movie_imdb.py
 
 You can obtain a network schema graph like this:
 
-![network schema](https://github.com/jennyzhang0215/MovieLens-IMDB/blob/master/network_schema_movielens_5.pngg)
+![network_schema](https://github.com/jennyzhang0215/MovieLens-IMDB/blob/master/network_schema_movielens_5.pngg)
 
 ### ML-20M
 
