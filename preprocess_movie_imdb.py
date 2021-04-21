@@ -42,7 +42,7 @@ SAVE_DATASET_DIR =os.path.realpath(os.path.join(os.path.abspath(__file__), '..',
 if not os.path.isdir(SAVE_DATASET_DIR):
     os.mkdir(SAVE_DATASET_DIR)
 
-IMDB_DIR = "_IMDB"
+IMDB_DIR = "IMDb"
 MOVIE_DIR =os.path.realpath(os.path.join(os.path.abspath(__file__), '..', "movielens", "statistics", NAME))
 
 
