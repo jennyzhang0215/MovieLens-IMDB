@@ -134,3 +134,5 @@ dmypy.json
 movielens/raw/ml-25m/*
 *.zip
 .DS_Store
+output/ml-25m-imdb/movie_ml_imdb.csv
+output/ml-25m-imdb/nconst_info.csv
